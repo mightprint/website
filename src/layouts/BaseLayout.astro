@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const {
+  title = "Might Print",
+  description = "Might Print builds structured packaging systems for international and regulated markets.",
+  image = "/logo.svg",
+  noindex = false,
+} = Astro.props;
+
+const hasSite = Boolean(Astro.site);
+const canonical = hasSite
+  ? new URL(Astro.url.pathname, Astro.site).toString()
+  : undefined;
+const imageUrl = hasSite
+  ? image.startsWith("http")
+    ? image
+    : new URL(image, Astro.site).toString()
+  : undefined;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
+    <meta name="twitter:card" content={imageUrl ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+  </head>
+
+  <body>
+    <Header />
+
+    <main class="page">
+      <slot />
+    </main>
+
+    <slot name="fullwidth" />
+    <Footer />
+  </body>
+
+  <style>
+    .page {
+      min-height: 60vh;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+  </style>
+</html>

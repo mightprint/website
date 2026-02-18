@@ -1,0 +1,206 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SecondaryHero from "../components/SecondaryHero.astro";
+---
+
+<BaseLayout
+  title="Packaging System | Might Print"
+  description="From primary flexible packaging to retail display and shipping cartons, we design structured packaging systems for international markets."
+>
+  <SecondaryHero
+    title="Packaging System Solutions"
+    description="From primary flexible packaging to retail display and shipping cartons - we design structured packaging systems built for international markets."
+  />
+
+  <div class="container">
+    <section class="section system-intro">
+      <h2>Built as a System, Not Just Products</h2>
+      <p>
+        We do not sell isolated packaging items. We build structured packaging
+        systems that ensure consistency across design, color control, material
+        performance, and long-term repeat production.
+      </p>
+    </section>
+
+    <section class="section packaging-structure">
+      <div class="structure-layer">
+        <div class="structure-text">
+          <span class="layer-label">Layer 1</span>
+          <h3>Primary Packaging</h3>
+          <p>
+            Direct-contact packaging that protects product freshness, barrier
+            performance, and shelf impact.
+          </p>
+          <ul>
+            <li>Stand-Up Pouches</li>
+            <li>Flat Bottom Pouches</li>
+            <li>Mylar Bags</li>
+            <li>Custom Flexible Packaging</li>
+          </ul>
+        </div>
+        <div class="structure-image">
+          <Image
+            src="https://placehold.co/600x450?text=Primary+Packaging"
+            alt="Primary Packaging"
+            width={600}
+            height={450}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
+        </div>
+      </div>
+
+      <div class="structure-layer reverse">
+        <div class="structure-text">
+          <span class="layer-label">Layer 2</span>
+          <h3>Secondary Packaging</h3>
+          <p>
+            Retail-ready structures that enhance shelf presence and organize
+            multiple units for display.
+          </p>
+          <ul>
+            <li>Display Boxes</li>
+            <li>Retail Cartons</li>
+            <li>Folding Paper Boxes</li>
+          </ul>
+        </div>
+        <div class="structure-image">
+          <Image
+            src="https://placehold.co/600x450?text=Secondary+Packaging"
+            alt="Secondary Packaging"
+            width={600}
+            height={450}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="structure-layer">
+        <div class="structure-text">
+          <span class="layer-label">Layer 3</span>
+          <h3>Tertiary Packaging</h3>
+          <p>
+            Export and logistics packaging designed for stacking strength,
+            shipping stability, and compliance.
+          </p>
+          <ul>
+            <li>Corrugated Cartons</li>
+            <li>Master Shipping Boxes</li>
+            <li>Pallet-Optimized Cartons</li>
+          </ul>
+        </div>
+        <div class="structure-image">
+          <Image
+            src="https://placehold.co/600x450?text=Tertiary+Packaging"
+            alt="Tertiary Packaging"
+            width={600}
+            height={450}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section capability-section">
+      <h2>System-Level Capabilities</h2>
+
+      <div class="capability-grid">
+        <div class="capability-card">
+          <h4>Color Consistency Control</h4>
+          <p>
+            Managed color standards across flexible and paper materials for
+            long-term repeat production.
+          </p>
+        </div>
+
+        <div class="capability-card">
+          <h4>Material Structure Engineering</h4>
+          <p>
+            Customized laminate structures for moisture, oxygen, and shelf-life
+            performance.
+          </p>
+        </div>
+
+        <div class="capability-card">
+          <h4>Retail-Ready Structural Design</h4>
+          <p>
+            Designed for both shelf impact and production feasibility.
+          </p>
+        </div>
+
+        <div class="capability-card">
+          <h4>Export Compliance and Stability</h4>
+          <p>
+            Built for North America and European market standards.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section industry-section">
+      <h2>Industries We Serve</h2>
+
+      <div class="industry-grid">
+        <div class="industry-card">
+          <Image
+            src="https://placehold.co/400x300?text=Food+Packaging"
+            alt="Food Packaging"
+            width={400}
+            height={300}
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            loading="lazy"
+          />
+          <h4>Food and Snack Brands</h4>
+        </div>
+
+        <div class="industry-card">
+          <Image
+            src="https://placehold.co/400x300?text=Pet+Food"
+            alt="Pet Food Packaging"
+            width={400}
+            height={300}
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            loading="lazy"
+          />
+          <h4>Pet Food</h4>
+        </div>
+
+        <div class="industry-card">
+          <Image
+            src="https://placehold.co/400x300?text=Supplements"
+            alt="Supplement Packaging"
+            width={400}
+            height={300}
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            loading="lazy"
+          />
+          <h4>Supplements</h4>
+        </div>
+
+        <div class="industry-card">
+          <Image
+            src="https://placehold.co/400x300?text=Consumer+Goods"
+            alt="Consumer Goods Packaging"
+            width={400}
+            height={300}
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            loading="lazy"
+          />
+          <h4>Consumer Goods</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Build Your Packaging System</h2>
+      <p>
+        Tell us your product category, market, and estimated volume - we will
+        recommend a structured packaging solution aligned with your retail and
+        export requirements.
+      </p>
+      <a href="/contact" class="btn-primary">Request System Proposal</a>
+    </section>
+  </div>
+</BaseLayout>

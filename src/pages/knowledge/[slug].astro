@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import { getCollection } from "astro:content";
+import ArticleCTA from "../../components/ArticleCTA.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("knowledge");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+// ✅ 安全日期逻辑（不会再报错）
+const publishDate = post.data.publishDate ?? new Date();
+const updatedDate = post.data.updatedDate;
+---
+
+<BaseLayout title={`${post.data.title} | Might Print`}>
+
+  <!-- Secondary Hero -->
+  <section class="secondary-hero">
+    <div class="container">
+
+      <Breadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Knowledge", href: "/knowledge" },
+          { label: post.data.title },
+        ]}
+      />
+
+      <div class="secondary-hero-inner">
+        <h1>{post.data.title}</h1>
+        {post.data.description && <p>{post.data.description}</p>}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Article Content -->
+  <section class="article-section">
+    <article class="post-content">
+
+      <!-- Meta Info -->
+      <p class="post-meta">
+        Published: {publishDate.toLocaleDateString()}
+        {updatedDate && (
+          <> | Updated: {updatedDate.toLocaleDateString()}</>
+        )}
+      </p>
+
+      <Content />
+
+      <ArticleCTA />
+
+    </article>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,151 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../../components/Card.astro";
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("knowledge");
+
+const categoryLabel: Record<string, string> = {
+  flexible: "Flexible Packaging",
+  paper: "Paper Packaging",
+  printing: "Printing and Color Control",
+  compliance: "Compliance and Standards",
+  artwork: "Artwork and Files",
+  cost: "Cost and Lead Time",
+};
+
+const groupedPosts = posts.reduce<Record<string, typeof posts>>((acc, post) => {
+  const cat = post.data.category;
+  if (!acc[cat]) {
+    acc[cat] = [];
+  }
+  acc[cat].push(post);
+  return acc;
+}, {});
+---
+
+<BaseLayout
+  title="Packaging Knowledge | Might Print"
+  description="Structured insights into retail-ready packaging systems, compliance integration, and scalable production strategy."
+>
+  <section class="secondary-hero">
+    <div class="container">
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Knowledge" }]} />
+
+      <div class="secondary-hero-inner">
+        <h1>Packaging Knowledge Center</h1>
+        <p>
+          Structured insights into retail-ready packaging systems, compliance
+          integration, and scalable production strategy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="section">
+      <p class="content-narrow">
+        This knowledge center is designed for international buyers, brand
+        owners, and product developers navigating regulated markets in North
+        America and Europe. Explore structured packaging logic, compliance
+        standards, and production engineering principles.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="foundational-block">
+        <div class="foundational-content">
+          <p class="foundational-label">Foundational Guide</p>
+
+          <h2>
+            <a href="/knowledge/retail-ready-packaging-system">
+              What Is Retail-Ready Packaging? Complete Guide
+            </a>
+          </h2>
+
+          <p>
+            A comprehensive overview of retail-ready packaging systems,
+            including structural layers, compliance integration, retail
+            optimization, and scalable development logic.
+          </p>
+
+          <a href="/knowledge/retail-ready-packaging-system" class="btn-primary">
+            Read the Complete Guide
+          </a>
+        </div>
+
+        <div class="foundational-visual">
+          <div class="image-placeholder large"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Core Knowledge Areas</h2>
+
+      <div class="grid grid-3">
+        <Card>
+          <h3>Flexible Packaging</h3>
+          <p>Barrier structures, lamination types, pouch formats.</p>
+          <a href="#flexible" class="card-action">Explore -></a>
+        </Card>
+
+        <Card>
+          <h3>Printing and Color Control</h3>
+          <p>Color tolerance, ink standards, export printing control.</p>
+          <a href="#printing" class="card-action">Explore -></a>
+        </Card>
+
+        <Card>
+          <h3>Compliance and Standards</h3>
+          <p>FDA, EU packaging rules, labeling requirements.</p>
+          <a href="#compliance" class="card-action">Explore -></a>
+        </Card>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Technical Articles and Guides</h2>
+
+      {
+        Object.entries(groupedPosts).map(([category, categoryPosts]) => (
+          <div id={category} class="section">
+            <h3>{categoryLabel[category] ?? category}</h3>
+
+            <div class="grid grid-3">
+              {categoryPosts.map((post) => (
+                <Card>
+                  <h4>
+                    <a href={`/knowledge/${post.slug}`}>
+                      {post.data.title}
+                    </a>
+                  </h4>
+
+                  <p>{post.data.description}</p>
+
+                  <a href={`/knowledge/${post.slug}`} class="card-action">
+                    Read article ->
+                  </a>
+                </Card>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </section>
+
+    <section class="section">
+      <div class="cta">
+        <h2>Need Help With Custom Packaging?</h2>
+        <p>
+          Our team supports structural design, compliance integration, and
+          scalable production planning for regulated markets.
+        </p>
+        <a href="/contact" class="btn-primary">
+          Request a Consultation
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

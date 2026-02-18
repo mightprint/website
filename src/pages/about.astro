@@ -1,0 +1,140 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SecondaryHero from "../components/SecondaryHero.astro";
+---
+
+<BaseLayout
+  title="About Us | Might Print"
+  description="We build structured packaging systems for international brands, with a focus on consistency, compliance, and stable repeat production."
+>
+  <SecondaryHero
+    title="About Might Print"
+    description="We build structured packaging systems for international brands - focusing on consistency, compliance, and long-term repeat production."
+  />
+
+  <div class="container">
+    <section class="section about-intro">
+      <h2>Who We Are</h2>
+      <p>
+        Founded in 2014 in Dongguan, China, Might Print specializes in flexible
+        packaging and paper-based packaging systems for export markets.
+      </p>
+      <p>
+        Our focus is not just manufacturing - but building structured packaging
+        solutions that remain stable across long-term repeat production.
+      </p>
+    </section>
+
+    <section class="section about-visual">
+      <Image
+        src="https://placehold.co/1200x500?text=Factory+or+Production+Image"
+        alt="Might Print Factory"
+        width={1200}
+        height={500}
+        sizes="(min-width: 1200px) 1200px, 100vw"
+      />
+    </section>
+
+    <section class="section">
+      <h2>What We Build</h2>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Primary Packaging</h3>
+          <p>
+            Flexible laminated structures including stand-up pouches, flat bottom
+            pouches, and high-barrier bags for food, supplements, and regulated
+            categories.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Secondary Packaging</h3>
+          <p>
+            Retail cartons and display structures designed for shelf presentation
+            and structural reliability.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Tertiary Packaging</h3>
+          <p>
+            Export-ready master cartons optimized for stacking strength and
+            international logistics.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-process">
+      <h2>How We Work</h2>
+
+      <div class="process-grid">
+        <div class="process-step">
+          <span>01</span>
+          <h4>Structure Planning</h4>
+          <p>
+            Define material structure and packaging architecture based on product
+            category and market requirements.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span>02</span>
+          <h4>Color and Print Control</h4>
+          <p>
+            Maintain consistent color standards across flexible and paper materials.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span>03</span>
+          <h4>Mass Production Stability</h4>
+          <p>
+            Ensure repeatable quality across long-term orders.
+          </p>
+        </div>
+
+        <div class="process-step">
+          <span>04</span>
+          <h4>Export Compliance</h4>
+          <p>
+            Align with North American and European regulatory requirements.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-trust">
+      <h2>Why Brands Work With Us</h2>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <h4>10+ Years Export Experience</h4>
+        </div>
+
+        <div class="trust-card">
+          <h4>Focused on EU and North America</h4>
+        </div>
+
+        <div class="trust-card">
+          <h4>Stable Long-Term Production</h4>
+        </div>
+
+        <div class="trust-card">
+          <h4>System-Based Packaging Approach</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Let's Build Your Packaging System</h2>
+      <p>
+        Share your product category. We will help you design a
+        packaging structure aligned with retail and export standards.
+      </p>
+      <a href="/contact" class="btn-primary">Start a Conversation</a>
+    </section>
+  </div>
+</BaseLayout>

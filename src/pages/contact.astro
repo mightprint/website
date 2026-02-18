@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SecondaryHero from "../components/SecondaryHero.astro";
+---
+
+<BaseLayout
+  title="Contact | Might Print"
+  description="Tell us about your product and target market. We will help you design a structured packaging solution."
+>
+  <SecondaryHero
+    title="Start Your Packaging Project"
+    description="Tell us about your product and target market. We will help you design a structured packaging solution."
+  />
+
+  <div class="container">
+    <section class="section contact-wrapper">
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+
+        <div class="info-card">
+          <p><strong>Location</strong></p>
+          <p>Dongguan, Guangdong, China</p>
+        </div>
+
+        <div class="info-card">
+          <p><strong>Email</strong></p>
+          <p>
+            <a href="mailto:sales@mightprint.com">
+              sales@mightprint.com
+            </a>
+          </p>
+        </div>
+
+        <div class="info-card">
+          <p><strong>Phone / WhatsApp</strong></p>
+          <p>+86 139 2582 1050</p>
+        </div>
+
+        <div class="info-note">
+          <p>
+            We typically respond within 24 hours for international inquiries.
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-form-box">
+        <h2>Request a Packaging Proposal</h2>
+
+        <form action="#" method="POST" class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Business Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="market">Target Market</label>
+              <select id="market" name="market">
+                <option>North America</option>
+                <option>Europe</option>
+                <option>Australia</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="quantity">Estimated Order Volume</label>
+              <input type="text" id="quantity" name="quantity" placeholder="e.g. 50,000 pcs" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Project Details</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Tell us about your product category, packaging type, and timeline."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary full-width">
+            Send Inquiry
+          </button>
+        </form>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

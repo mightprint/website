@@ -1,0 +1,27 @@
+---
+const { src, alt, caption } = Astro.props;
+---
+
+<figure class="article-image">
+  <img src={src} alt={alt} loading="lazy" />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style>
+  .article-image {
+    margin: 2.5rem 0;
+    text-align: center;
+  }
+
+  .article-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+  }
+
+  .article-image figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #666;
+  }
+</style>
