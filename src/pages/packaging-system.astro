@@ -1,35 +1,28 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
+import SecondaryHero from "../components/SecondaryHero.astro";
 
 const pageTitle = "Packaging Development System | Might Print";
-const pageDescription = "A structured packaging development system integrating structural engineering, compliance planning, and scalable production.";
+const pageDescription =
+  "A structured packaging development system integrating structural engineering, compliance planning, and scalable production.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
-
-  <!-- Hero -->
-  <section class="secondary-hero">
-    <div class="container">
-      <div class="secondary-hero-inner">
-        <h1>Packaging Development System</h1>
-        <p>
-          A structured approach to transform product concepts
-          into scalable, retail-ready packaging solutions.
-        </p>
-      </div>
-    </div>
-  </section>
+  <!-- SecondaryHero -->  
+  <SecondaryHero
+    title="Packaging Development System"
+    description="A structured approach to transform product concepts into scalable, retail-ready packaging solutions."
+  />
 
   <div class="container">
-
     <!-- Strategic Positioning -->
     <section class="section">
       <p class="content-narrow">
-        Most packaging suppliers focus only on manufacturing.
-        Our Packaging Development System integrates structural
-        engineering, compliance foresight, designer collaboration,
-        and production optimization into one coordinated workflow.
+        Most packaging suppliers focus only on manufacturing. Our Packaging
+        Development System integrates structural engineering, compliance
+        foresight, designer collaboration, and production optimization into one
+        coordinated workflow.
       </p>
     </section>
 
@@ -38,31 +31,29 @@ const pageDescription = "A structured packaging development system integrating s
       <h2>Core Capabilities</h2>
 
       <div class="grid grid-3">
-
         <Card>
           <h3>Structural Engineering</h3>
           <p>
-            Custom dieline development optimized for protection,
-            assembly efficiency, and material cost control.
+            Custom dieline development optimized for protection, assembly
+            efficiency, and material cost control.
           </p>
         </Card>
 
         <Card>
           <h3>Template Standardization</h3>
           <p>
-            Refining or rebuilding designer templates to meet
-            professional production standards.
+            Refining or rebuilding designer templates to meet professional
+            production standards.
           </p>
         </Card>
 
         <Card>
           <h3>Compliance Integration</h3>
           <p>
-            Structural and layout planning aligned with
-            regulatory requirements in North America and Europe.
+            Structural and layout planning aligned with regulatory requirements
+            in North America and Europe.
           </p>
         </Card>
-
       </div>
     </section>
 
@@ -71,39 +62,37 @@ const pageDescription = "A structured packaging development system integrating s
       <h2>Development Workflow</h2>
 
       <div class="grid grid-2">
-
         <Card>
           <h3>01 - Product Assessment</h3>
           <p>
-            Analyze dimensions, weight, barrier needs,
-            shipping conditions, and retail environment.
+            Analyze dimensions, weight, barrier needs, shipping conditions, and
+            retail environment.
           </p>
         </Card>
 
         <Card>
           <h3>02 - Structural Proposal</h3>
           <p>
-            Deliver production-ready dieline with
-            assembly and cost optimization.
+            Deliver production-ready dieline with assembly and cost
+            optimization.
           </p>
         </Card>
 
         <Card>
           <h3>03 - Designer Collaboration</h3>
           <p>
-            Improve existing templates or provide
-            standardized structural files for artwork layout.
+            Improve existing templates or provide standardized structural files
+            for artwork layout.
           </p>
         </Card>
 
         <Card>
           <h3>04 - Production Validation</h3>
           <p>
-            Final review for print alignment, finishing,
-            and scalable mass production.
+            Final review for print alignment, finishing, and scalable mass
+            production.
           </p>
         </Card>
-
       </div>
     </section>
 
@@ -113,9 +102,9 @@ const pageDescription = "A structured packaging development system integrating s
 
       <p class="content-narrow">
         Packaging failures often originate from structural oversight,
-        non-standard templates, or late-stage compliance corrections.
-        Our system minimizes rework, shortens development cycles,
-        and ensures predictable production outcomes.
+        non-standard templates, or late-stage compliance corrections. Our system
+        minimizes rework, shortens development cycles, and ensures predictable
+        production outcomes.
       </p>
     </section>
 
@@ -123,15 +112,9 @@ const pageDescription = "A structured packaging development system integrating s
     <section class="section">
       <div class="cta">
         <h2>Start Your Packaging Development Project</h2>
-        <p>
-          Discuss your product requirements with our engineering team.
-        </p>
-        <a href="/contact" class="btn-primary">
-          Request Consultation
-        </a>
+        <p>Discuss your product requirements with our engineering team.</p>
+        <a href="/contact" class="btn-primary"> Request Consultation </a>
       </div>
     </section>
-
   </div>
-
 </BaseLayout>

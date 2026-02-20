@@ -1,16 +1,27 @@
-<footer class="site-footer">
-  <p>
-    &copy; {new Date().getFullYear()} Might Print | Custom Packaging Manufacturer
-  </p>
+<footer class="site-footer" role="contentinfo">
+  <div class="container footer-inner">
+    <p>
+      &copy; {new Date().getFullYear()} Might Print | Custom Packaging Manufacturer
+    </p>
+  </div>
 </footer>
 
 <style>
   .site-footer {
+    margin-top: 0.5rem;
+    background: #fff;
+  }
+
+  .footer-inner {
+    border-top: 1px solid #d2d2d7; /* Apple 风格的顶部灰线 */
+    padding: 1.2rem 1.5rem 1.2rem;
+  }
+
+  .site-footer p {
     margin: 0;
-    padding: 0.5rem 1.5rem;
-    background: var(--color-primary);
-    color: #ffffff;
-    text-align: center;
     font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+    color: var(--color-muted);
   }
 </style>

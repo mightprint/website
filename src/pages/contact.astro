@@ -5,56 +5,129 @@ import SecondaryHero from "../components/SecondaryHero.astro";
 
 <BaseLayout
   title="Contact | Might Print"
-  description="Tell us about your product and target market. We will help you design a structured packaging solution."
+  description="Tell us about your regulated product and market requirements. We will engineer a structured packaging system for you."
 >
   <SecondaryHero
     title="Start Your Packaging Project"
-    description="Tell us about your product and target market. We will help you design a structured packaging solution."
+    description="Tell us about your product and market requirements. Our engineering team will design a complete packaging system solution."
   />
 
   <div class="container">
     <section class="section contact-wrapper">
-      <div class="contact-info">
-        <h2>Contact Information</h2>
+      <!-- LEFT SIDE -->
+      <div class="contact-left">
+        <div class="contact-info contact-card">
+          <h2>Contact Information</h2>
 
-        <div class="info-card">
-          <p><strong>Location</strong></p>
-          <p>Dongguan, Guangdong, China</p>
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-map-pin-icon lucide-map-pin"
+                  ><path
+                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+                  ></path><circle cx="12" cy="10" r="3"></circle></svg
+                >
+              </div>
+              <div class="contact-info-content">
+                <p class="contact-info-label">Manufacturing Base</p>
+                <p>Dongguan, Guangdong, China</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-mail-icon lucide-mail"
+                  ><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
+                  ></path><rect x="2" y="4" width="20" height="16" rx="2"
+                  ></rect></svg
+                >
+              </div>
+              <div class="contact-info-content">
+                <p class="contact-info-label">Email</p>
+                <p>
+                  <a href="mailto:sales@mightprint.com">sales@mightprint.com</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-phone-icon lucide-phone"
+                  ><path
+                    d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                  ></path></svg
+                >
+              </div>
+              <div class="contact-info-content">
+                <p class="contact-info-label">Phone | WhatsApp</p>
+                <p>+86 139 2582 1050</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-note">
+            <p>
+              We typically respond within 12 hours for international inquiries.
+            </p>
+          </div>
         </div>
 
-        <div class="info-card">
-          <p><strong>Email</strong></p>
-          <p>
-            <a href="mailto:sales@mightprint.com">
-              sales@mightprint.com
-            </a>
-          </p>
-        </div>
-
-        <div class="info-card">
-          <p><strong>Phone / WhatsApp</strong></p>
-          <p>+86 139 2582 1050</p>
-        </div>
-
-        <div class="info-note">
-          <p>
-            We typically respond within 24 hours for international inquiries.
-          </p>
+        <div class="why-box">
+          <h3>Why Work With Might Print?</h3>
+          <ul>
+            <li>
+              Integrated flexible packaging + cartons + display
+            </li>
+            <li>Regulated market compliance focus</li>
+            <li>Fast prototyping and engineering support</li>
+            <li>Reliable export experience</li>
+          </ul>
         </div>
       </div>
 
+      <!-- RIGHT SIDE -->
       <div class="contact-form-box">
         <h2>Request a Packaging Proposal</h2>
 
         <form action="#" method="POST" class="contact-form">
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Full Name</label>
+              <label for="name">Full Name *</label>
               <input type="text" id="name" name="name" required />
             </div>
 
             <div class="form-group">
-              <label for="email">Business Email</label>
+              <label for="email">Business Email *</label>
               <input type="email" id="email" name="email" required />
             </div>
           </div>
@@ -77,23 +150,27 @@ import SecondaryHero from "../components/SecondaryHero.astro";
 
             <div class="form-group">
               <label for="quantity">Estimated Order Volume</label>
-              <input type="text" id="quantity" name="quantity" placeholder="e.g. 50,000 pcs" />
+              <input
+                type="text"
+                id="quantity"
+                name="quantity"
+                placeholder="e.g. 5,000 pcs"
+              />
             </div>
           </div>
 
           <div class="form-group">
-            <label for="message">Project Details</label>
+            <label for="message">Project Details *</label>
             <textarea
               id="message"
               name="message"
-              rows="5"
-              placeholder="Tell us about your product category, packaging type, and timeline."
-              required
-            ></textarea>
+              rows="6"
+              placeholder="Tell us about your product category, packaging type, compliance requirements, and timeline."
+              required></textarea>
           </div>
 
           <button type="submit" class="btn-primary full-width">
-            Send Inquiry
+            Request Proposal
           </button>
         </form>
       </div>

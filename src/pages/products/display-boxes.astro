@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SecondaryHero from "../../components/SecondaryHero.astro";
+import Card from "../../components/Card.astro";
 ---
 
 <BaseLayout
@@ -53,29 +54,29 @@ import SecondaryHero from "../../components/SecondaryHero.astro";
       <h2>Common Specifications</h2>
 
       <div class="grid">
-        <div class="card">
+        <Card>
           <h3>Materials</h3>
           <p>
             Grey board, white card, kraft paper, or coated paperboard,
             selected based on strength and display requirements.
           </p>
-        </div>
+        </Card>
 
-        <div class="card">
+        <Card>
           <h3>Printing</h3>
           <p>
             CMYK offset printing with optional Pantone colors for brand
             consistency.
           </p>
-        </div>
+        </Card>
 
-        <div class="card">
+        <Card>
           <h3>Finishing Options</h3>
           <p>
             Matte / gloss lamination, spot UV, embossing, debossing, and
             foil stamping.
           </p>
-        </div>
+        </Card>
       </div>
     </section>
 

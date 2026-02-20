@@ -1,29 +1,27 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SecondaryHero from "../../components/SecondaryHero.astro";
+import Card from "../../components/Card.astro"
 ---
 
 <BaseLayout title="Stand-Up Pouches | Might Print">
-
   <!-- Secondary Hero -->
-<SecondaryHero
-  title="Stand-Up Pouches"
-  description="Flexible packaging solutions designed for food, supplements, and regulated products in export markets."
-/>
+  <SecondaryHero
+    title="Stand-Up Pouches"
+    description="Flexible packaging solutions designed for food, supplements, and regulated products in export markets."
+  />
 
   <!-- Main Content (NOT full width) -->
   <div class="container">
-
     <!-- Overview -->
     <section class="section">
       <div class="prose">
         <h2>Product Overview</h2>
         <p>
-          Our stand-up pouches are widely used by brands in North America
-          and Europe for food, supplements, and specialty products.
-          Designed with stable structures, reliable materials, and
-          consistent printing quality, they support long-term brand
-          growth and export compliance.
+          Our stand-up pouches are widely used by brands in North America and
+          Europe for food, supplements, and specialty products. Designed with
+          stable structures, reliable materials, and consistent printing
+          quality, they support long-term brand growth and export compliance.
         </p>
       </div>
     </section>
@@ -33,28 +31,26 @@ import SecondaryHero from "../../components/SecondaryHero.astro";
       <h2>Common Applications</h2>
 
       <div class="grid">
-        <div class="card">
+        <Card>
           <h3>Food Packaging</h3>
           <p>
             Snacks, coffee, dried food, frozen food, and functional foods
             requiring moisture and oxygen barriers.
           </p>
-        </div>
+        </Card>
 
-        <div class="card">
+        <Card>
           <h3>Supplements</h3>
           <p>
-            Gummies, powders, capsules, and nutrition products for
-            regulated markets.
+            Gummies, powders, capsules, and nutrition products for regulated
+            markets.
           </p>
-        </div>
+        </Card>
 
-        <div class="card">
+        <Card>
           <h3>Pet & Specialty Products</h3>
-          <p>
-            Pet treats, specialty powders, and niche consumer products.
-          </p>
-        </div>
+          <p>Pet treats, specialty powders, and niche consumer products.</p>
+        </Card>
       </div>
     </section>
 
@@ -77,10 +73,10 @@ import SecondaryHero from "../../components/SecondaryHero.astro";
       <div class="prose">
         <h2>Materials & Printing Quality</h2>
         <p>
-          Material selection is based on barrier requirements, shelf life,
-          and destination market regulations. Our gravure printing process
-          ensures consistent color reproduction across repeat orders,
-          supporting long-term brand consistency.
+          Material selection is based on barrier requirements, shelf life, and
+          destination market regulations. Our gravure printing process ensures
+          consistent color reproduction across repeat orders, supporting
+          long-term brand consistency.
         </p>
       </div>
     </section>
@@ -99,19 +95,14 @@ import SecondaryHero from "../../components/SecondaryHero.astro";
     </section>
 
     <!-- CTA -->
-    <section class="section">
-      <div class="card">
-        <h3>Looking for Custom Stand-Up Pouches?</h3>
-        <p>
-          Contact Might Print to discuss your product requirements,
-          packaging structure options, and export compliance needs.
-        </p>
+    <section class="cta">
+      <h2>Looking for Custom Stand-Up Pouches?</h2>
+      <p>
+        Contact Might Print to discuss your product requirements, packaging
+        structure options, and export compliance needs.
+      </p>
 
-        <a href="/contact" class="btn-primary">
-          Request a Quote
-        </a>
-      </div>
+      <a href="/contact" class="btn-primary"> Request a Quote </a>
     </section>
-
   </div>
 </BaseLayout>

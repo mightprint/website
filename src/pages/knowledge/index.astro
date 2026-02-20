@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import SecondaryHero from "../../components/SecondaryHero.astro";
 import Card from "../../components/Card.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import { getCollection } from "astro:content";
@@ -29,19 +30,13 @@ const groupedPosts = posts.reduce<Record<string, typeof posts>>((acc, post) => {
   title="Packaging Knowledge | Might Print"
   description="Structured insights into retail-ready packaging systems, compliance integration, and scalable production strategy."
 >
-  <section class="secondary-hero">
-    <div class="container">
-      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Knowledge" }]} />
+  <SecondaryHero
+  title="Packaging Knowledge Center"
+  description="Structured insights into retail-ready packaging systems, compliance integration, and scalable production strategy."
+>
+  <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Knowledge" }]} />
+</SecondaryHero>
 
-      <div class="secondary-hero-inner">
-        <h1>Packaging Knowledge Center</h1>
-        <p>
-          Structured insights into retail-ready packaging systems, compliance
-          integration, and scalable production strategy.
-        </p>
-      </div>
-    </div>
-  </section>
 
   <div class="container">
     <section class="section">

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Card from "../../components/Card.astro";
+import SecondaryHero from "../../components/SecondaryHero.astro";
 
 const pageTitle =
   "What Is Retail-Ready Packaging? Complete Guide (2026) | Might Print";
@@ -10,17 +11,12 @@ const pageDescription =
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
-  <section class="secondary-hero">
-    <div class="container">
-      <div class="secondary-hero-inner">
-        <h1>What Is Retail-Ready Packaging?</h1>
-        <p>
-          A complete guide to building compliant, scalable, and retail-optimized
-          packaging systems for regulated and performance products.
-        </p>
-      </div>
-    </div>
-  </section>
+  
+  <!-- SecondaryHero -->  
+  <SecondaryHero
+    title="What Is Retail-Ready Packaging?"
+    description="A complete guide to building compliant, scalable, and retail-optimized, packaging systems for regulated and performance products."
+  />
 
   <div class="container">
     <section class="section">

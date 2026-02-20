@@ -5,9 +5,40 @@ const { title, description } = Astro.props;
 <section class="secondary-hero">
   <div class="container">
     <div class="secondary-hero-inner">
+      <slot />
       <h1>{title}</h1>
       {description && <p>{description}</p>}
-      <slot />
     </div>
   </div>
 </section>
+
+<style>
+  .secondary-hero {
+  padding: 40px 0 50px;
+  background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 70%);
+  position: relative;
+  overflow: hidden;
+  }
+
+  .secondary-hero-inner {
+    margin-top: 0rem;
+  }
+
+  .secondary-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .secondary-hero p {
+    max-width: 720px;
+    font-size: 1.05rem;
+    color: var(--color-muted);
+  }
+
+  /* Mobile */
+@media (max-width: 768px) {
+  .secondary-hero h1 {
+    font-size: 1.8rem;
+  }
+}
+</style>
