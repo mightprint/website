@@ -2,112 +2,132 @@
 import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SecondaryHero from "../components/SecondaryHero.astro";
+
+const pageTitle = "About Might Print | Structured Packaging Systems";
+const pageDescription =
+  "Might Print is a structured packaging system manufacturer based in Dongguan, serving North American and European markets with stable, repeatable production.";
 ---
 
-<BaseLayout
-  title="About Us | Might Print"
-  description="We build structured packaging systems for international brands, with a focus on consistency, compliance, and stable repeat production."
->
+<BaseLayout title={pageTitle} description={pageDescription}>
   <SecondaryHero
     title="About Might Print"
-    description="We build structured packaging systems for international brands - focusing on consistency, compliance, and long-term repeat production."
+    description="An engineering-driven packaging manufacturer focused on structure logic, print control, and long-term production stability."
   />
 
   <div class="container">
-    <section class="section about-intro">
+
+    <!-- WHO WE ARE -->
+    <section class="section">
       <h2>Who We Are</h2>
-      <p>
-        Founded in 2014 in Dongguan, China, Might Print specializes in flexible
-        packaging and paper-based packaging systems for export markets.
-      </p>
-      <p>
-        Our focus is not just manufacturing - but building structured packaging
-        solutions that remain stable across long-term repeat production.
+      <p class="system-intro">
+        Founded in 2014 in Dongguan, China, Might Print operates as a
+        structured packaging system manufacturer serving international brands.
+        Our focus extends beyond production — we emphasize structural clarity,
+        process control, and repeatable performance.
       </p>
     </section>
 
-    <section class="section about-visual">
+    <!-- SYSTEM PHILOSOPHY -->
+    <section class="section">
+      <h2>Our System Philosophy</h2>
+      <p class="system-intro">
+        We believe packaging stability begins before machines start running.
+        Structural assumptions, artwork governance, and production validation
+        must be aligned early in development.
+      </p>
+      <p>
+        This philosophy forms the foundation of our
+        Structured Packaging Development System —
+        a framework that reduces revision cycles and improves delivery predictability.
+      </p>
+    </section>
+
+    <!-- VISUAL -->
+    <section class="section">
       <Image
         src="https://placehold.co/1200x500?text=Factory+or+Production+Image"
-        alt="Might Print Factory"
+        alt="Might Print Production Facility"
         width={1200}
         height={500}
         sizes="(min-width: 1200px) 1200px, 100vw"
       />
     </section>
 
+    <!-- CAPABILITIES -->
     <section class="section">
-      <h2>What We Build</h2>
+      <h2>Integrated Packaging Capability</h2>
 
       <div class="about-grid">
         <div class="about-card">
-          <h3>Primary Packaging</h3>
+          <h3>Flexible Packaging Systems</h3>
           <p>
-            Flexible laminated structures including stand-up pouches, flat bottom
-            pouches, and high-barrier bags for food, supplements, and regulated
-            categories.
+            Laminated pouch structures including stand-up pouches,
+            flat bottom pouches, and high-barrier bags for food,
+            supplements, and regulated categories.
           </p>
         </div>
 
         <div class="about-card">
-          <h3>Secondary Packaging</h3>
+          <h3>Paper Box & Carton Structures</h3>
           <p>
-            Retail cartons and display structures designed for shelf presentation
-            and structural reliability.
+            Retail cartons and display systems engineered
+            for shelf presentation, stacking strength,
+            and export resilience.
           </p>
         </div>
 
         <div class="about-card">
-          <h3>Tertiary Packaging</h3>
+          <h3>Coordinated Label Systems</h3>
           <p>
-            Export-ready master cartons optimized for stacking strength and
-            international logistics.
+            Label and sticker architecture aligned with
+            bottle formats, cap seals, and promotional overlays.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section about-process">
-      <h2>How We Work</h2>
+    <!-- OPERATIONAL STABILITY -->
+    <section class="section">
+      <h2>Operational Stability</h2>
 
       <div class="process-grid">
         <div class="process-step">
           <span>01</span>
-          <h4>Structure Planning</h4>
+          <h4>Structured Intake & Planning</h4>
           <p>
-            Define material structure and packaging architecture based on product
-            category and market requirements.
+            Engineering-based evaluation before quotation and sampling.
           </p>
         </div>
 
         <div class="process-step">
           <span>02</span>
-          <h4>Color and Print Control</h4>
+          <h4>Template & Print Governance</h4>
           <p>
-            Maintain consistent color standards across flexible and paper materials.
+            Controlled template standards for cross-batch consistency.
           </p>
         </div>
 
         <div class="process-step">
           <span>03</span>
-          <h4>Mass Production Stability</h4>
+          <h4>Repeat Production Control</h4>
           <p>
-            Ensure repeatable quality across long-term orders.
+            Stable execution across long-term reorder cycles.
           </p>
         </div>
 
         <div class="process-step">
           <span>04</span>
-          <h4>Export Compliance</h4>
+          <h4>Export-Oriented Workflow</h4>
           <p>
-            Align with North American and European regulatory requirements.
+            Production aligned with North American and European market expectations.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section about-trust">
-      <h2>Why Brands Work With Us</h2>
+    <!-- MARKET TRUST -->
+    <section class="section">
+      <h2>Why International Brands Work With Us</h2>
 
       <div class="trust-grid">
         <div class="trust-card">
@@ -115,26 +135,32 @@ import SecondaryHero from "../components/SecondaryHero.astro";
         </div>
 
         <div class="trust-card">
-          <h4>Focused on EU and North America</h4>
+          <h4>EU & North America Focus</h4>
         </div>
 
         <div class="trust-card">
-          <h4>Stable Long-Term Production</h4>
+          <h4>Long-Term Repeat Production</h4>
         </div>
 
         <div class="trust-card">
-          <h4>System-Based Packaging Approach</h4>
+          <h4>Engineering-Based Packaging System</h4>
         </div>
       </div>
     </section>
 
+    <!-- CTA -->
     <section class="cta">
-      <h2>Let's Build Your Packaging System</h2>
+      <h2>Build With a Structured Packaging Partner</h2>
       <p>
-        Share your product category. We will help you design a
-        packaging structure aligned with retail and export standards.
+        If you require predictable production,
+        engineering-aligned development,
+        and export-focused execution —
+        our team is ready to evaluate your project.
       </p>
-      <a href="/contact" class="btn-primary">Start a Conversation</a>
+      <a href="/contact" class="btn-primary">
+        Start a Structured Discussion
+      </a>
     </section>
+
   </div>
 </BaseLayout>

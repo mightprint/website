@@ -1,0 +1,72 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  heroImage?: string;
+}
+
+const { title, description, heroImage } = Astro.props as Props;
+const fallbackImage = "https://placehold.co/1200x800/f3f8ff/24507a?text=Product+Hero+Image";
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <a href="/contact" class="btn-primary">Request Quote</a>
+      </div>
+
+      <div class="hero-image">
+        <img src={heroImage || fallbackImage} alt={title} loading="eager" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  padding: 56px 0 40px;
+  background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 70%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  margin: 0 0 14px;
+}
+
+.hero-text p {
+  font-size: 1.02rem;
+  color: var(--color-muted);
+  margin: 0 0 20px;
+}
+
+.hero-image {
+  border: 1px solid #e8edf3;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

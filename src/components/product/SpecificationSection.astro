@@ -1,0 +1,99 @@
+---
+interface SpecItem {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  materials?: string[];
+  moq?: string;
+  leadTime?: string;
+  technicalSpecs?: SpecItem[];
+}
+
+const { materials = [], moq, leadTime, technicalSpecs = [] } = Astro.props as Props;
+
+const autoSpecs: SpecItem[] = [
+  ...(materials.length ? [{ label: "Materials", value: materials.join(", ") }] : []),
+  ...(moq ? [{ label: "MOQ", value: moq }] : []),
+  ...(leadTime ? [{ label: "Lead Time", value: leadTime }] : []),
+];
+
+const allSpecs = technicalSpecs.length > 0 ? technicalSpecs : autoSpecs;
+---
+
+{allSpecs.length > 0 && (
+  <section class="section specs-section">
+    <div class="container">
+      <h2>Specifications</h2>
+
+      <div class="spec-grid">
+        {allSpecs.map((item) => (
+          <article class="spec-card">
+            <dl class="spec-dl">
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </dl>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+.specs-section {
+  margin-top: 0;
+}
+
+.specs-section h2 {
+  margin-bottom: 1rem;
+}
+
+.spec-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.spec-card {
+  border: 1px solid #e2ebf5;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fbfdff;
+}
+
+.spec-dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: minmax(170px, 230px) 1fr;
+}
+
+.spec-dl dt,
+.spec-dl dd {
+  margin: 0;
+  padding: 11px 14px;
+}
+
+.spec-dl dt {
+  background: #f1f7ff;
+  color: #16324d;
+  font-weight: 600;
+  border-right: 1px solid #e2ebf5;
+}
+
+.spec-dl dd {
+  background: #fff;
+  color: #3f5367;
+}
+
+@media (max-width: 900px) {
+  .spec-dl {
+    grid-template-columns: 1fr;
+  }
+
+  .spec-dl dt {
+    border-right: 0;
+    border-bottom: 1px solid #e2ebf5;
+  }
+}
+</style>

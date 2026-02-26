@@ -1,0 +1,59 @@
+---
+interface Props {
+  features?: string[];
+}
+
+const { features = [] } = Astro.props as Props;
+---
+
+{features.length > 0 && (
+  <section class="section features">
+    <div class="container">
+      <div class="features-box">
+        <h2>Key Features</h2>
+        <div class="feature-grid">
+          {features.map((item) => (
+            <article class="feature-card">
+              <p>{item}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+.features {
+  margin-top: 0;
+}
+
+.features-box {
+  background: #f7f9fc;
+  border: 1px solid #e8edf3;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.features-box h2 {
+  margin: 0 0 16px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.feature-card {
+  background: #fff;
+  border: 1px solid #edf2f7;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.feature-card p {
+  margin: 0;
+  line-height: 1.65;
+}
+</style>

@@ -1,0 +1,53 @@
+---
+interface Props {
+  applications?: string[];
+}
+
+const { applications = [] } = Astro.props as Props;
+---
+
+{applications.length > 0 && (
+  <section class="applications section">
+    <div class="container">
+      <div class="applications-box">
+        <h2>Applications</h2>
+        <div class="application-grid">
+          {applications.map((item) => (
+            <div class="application-item">{item}</div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+.applications {
+  margin-top: 0;
+}
+
+.applications-box {
+  background: #fff;
+  border: 1px solid #e8edf3;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.applications-box h2 {
+  margin: 0 0 16px;
+}
+
+.application-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.application-item {
+  background: #f8fbff;
+  border: 1px solid #e9eff7;
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--color-muted);
+}
+</style>

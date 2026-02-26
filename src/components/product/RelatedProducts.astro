@@ -1,0 +1,70 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  products: CollectionEntry<"products">[];
+}
+
+const { products } = Astro.props as Props;
+---
+
+{products.length > 0 && (
+  <section class="section related-products">
+    <div class="container">
+      <h2>Related Products</h2>
+      <div class="related-grid">
+        {products.map((p) => (
+          <a href={`/products/${p.slug}`} class="related-card">
+            <h3>{p.data.title}</h3>
+            <p>{p.data.description}</p>
+            <span>View Details</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+.related-products h2 {
+  margin-bottom: 16px;
+}
+
+.related-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.related-card {
+  display: block;
+  background: #fff;
+  border: 1px solid #e8edf3;
+  border-radius: 12px;
+  padding: 16px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+.related-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.06rem;
+}
+
+.related-card p {
+  margin: 0 0 10px;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.related-card span {
+  font-weight: 600;
+  color: #0f2a44;
+}
+</style>

@@ -1,0 +1,241 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const products = await getCollection("products");
+
+type ProductCategory = (typeof products)[number]["data"]["category"];
+
+const categoryMeta: Record<
+  ProductCategory,
+  { label: string; title: string; description: string }
+> = {
+  "flexible-packaging": {
+    label: "Primary Packaging",
+    title: "Flexible Packaging",
+    description:
+      "Stand-up pouches, flat bottom bags, rollstock films, and laminated structures with high barrier performance.",
+  },
+  "paper-box": {
+    label: "Secondary Packaging",
+    title: "Paper Box Packaging",
+    description:
+      "Display boxes, dispenser boxes, folding cartons, and rigid box solutions for shelf impact and structural strength.",
+  },
+  labels: {
+    label: "Branding Layer",
+    title: "Custom Labels & Stickers",
+    description:
+      "Bottle labels, promotional stickers, and retail adhesive solutions with stable print quality and short lead time.",
+  },
+};
+
+const categoryOrder: ProductCategory[] = ["flexible-packaging", "paper-box", "labels"];
+const allCategories: ProductCategory[] = [...new Set(products.map((p) => p.data.category))];
+
+const sortedCategories: ProductCategory[] = [
+  ...categoryOrder.filter((c) => allCategories.includes(c)),
+  ...allCategories.filter((c) => !categoryOrder.includes(c)),
+];
+
+const categoryCounts = Object.fromEntries(
+  sortedCategories.map((category) => [
+    category,
+    products.filter((p) => p.data.category === category).length,
+  ])
+) as Record<ProductCategory, number>;
+
+function toTitle(slug: string) {
+  return slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+---
+
+<BaseLayout
+  title="Packaging Products | Might Print"
+  description="Explore our flexible packaging, paper box, and custom label manufacturing solutions for global brands."
+>
+  <section class="products-hero">
+    <div class="container">
+      <h1>Packaging Products</h1>
+      <p>
+        Industrial-grade custom packaging solutions engineered for international
+        retail and export markets.
+      </p>
+    </div>
+  </section>
+
+  <section class="category-section section">
+    <div class="container">
+      <div class="category-grid">
+        {sortedCategories.map((category) => {
+          const meta = categoryMeta[category] ?? {
+            label: "Packaging Category",
+            title: toTitle(category),
+            description: "Explore products in this category.",
+          };
+
+          return (
+            <a href={`/products/category/${category}`} class="category-card">
+              <div class="card-content">
+                <span class="card-label">{meta.label}</span>
+                <h2>{meta.title}</h2>
+                <p>{meta.description}</p>
+                <div class="card-link">
+                  Explore Category ({categoryCounts[category] ?? 0})
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="manufacturing-strength section">
+    <div class="container">
+      <h2>Manufacturing Strength</h2>
+      <div class="strength-grid">
+        <div>
+          <h3>15+ Years</h3>
+          <p>Packaging Manufacturing Experience</p>
+        </div>
+        <div>
+          <h3>20+ Production Lines</h3>
+          <p>Advanced Printing & Laminating Equipment</p>
+        </div>
+        <div>
+          <h3>50+ Export Countries</h3>
+          <p>Serving North America & Europe</p>
+        </div>
+        <div>
+          <h3>ISO / BRC Ready</h3>
+          <p>International Quality Standards</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <h2>Need Custom Packaging Solutions?</h2>
+        <p>
+          Tell us your product type, material requirements, and estimated
+          volume. Our engineering team will recommend the optimal packaging
+          structure.
+        </p>
+        <a href="/contact" class="btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.products-hero {
+  padding: 72px 0 56px;
+  text-align: center;
+  background: linear-gradient(180deg, #f6f9fc 0%, #ffffff 70%);
+}
+
+.products-hero h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin: 0 0 0.75rem;
+}
+
+.products-hero p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: var(--color-muted);
+}
+
+.category-section {
+  margin-top: 0;
+}
+
+.category-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.category-card {
+  display: block;
+  padding: 30px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #e9edf3;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
+}
+
+.card-label {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6f7e8f;
+  margin-bottom: 10px;
+}
+
+.category-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+}
+
+.category-card p {
+  margin: 0 0 14px;
+  color: var(--color-muted);
+}
+
+.card-link {
+  font-weight: 600;
+  color: #0f2a44;
+}
+
+.manufacturing-strength {
+  text-align: center;
+  background: #f8fbff;
+  padding: 64px 0;
+  border-top: 1px solid #eef2f6;
+  border-bottom: 1px solid #eef2f6;
+}
+
+.manufacturing-strength h2 {
+  margin-top: 0;
+}
+
+.strength-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.strength-grid > div {
+  background: #fff;
+  border: 1px solid #e9edf3;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.strength-grid h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  color: #0f2a44;
+}
+
+.strength-grid p {
+  margin: 0;
+  color: var(--color-muted);
+}
+</style>

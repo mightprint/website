@@ -3,118 +3,199 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro";
 import SecondaryHero from "../components/SecondaryHero.astro";
 
-const pageTitle = "Packaging Development System | Might Print";
+const pageTitle = "Packaging Development Process for Regulated Markets | Might Print";
 const pageDescription =
-  "A structured packaging development system integrating structural engineering, compliance planning, and scalable production.";
+  "How we develop compliant, production-ready packaging through engineering review, artwork control, and validation before mass production.";
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
-  <!-- SecondaryHero -->  
+
   <SecondaryHero
-    title="Packaging Development System"
-    description="A structured approach to transform product concepts into scalable, retail-ready packaging solutions."
+    title="How We Develop Production-Ready Packaging"
+    description="A practical development process designed to reduce revision cycles, compliance risk, and production instability."
   />
 
   <div class="container">
-    <!-- Strategic Positioning -->
+
+    <!-- INTRO -->
     <section class="section">
       <p class="content-narrow">
-        Most packaging suppliers focus only on manufacturing. Our Packaging
-        Development System integrates structural engineering, compliance
-        foresight, designer collaboration, and production optimization into one
-        coordinated workflow.
+        Most packaging problems do not start in production.
+        They start earlier — in structure selection, artwork setup,
+        or unverified regulatory assumptions.
+      </p>
+
+      <p class="content-narrow">
+        Our development approach focuses on identifying these risks
+        before mass production begins, turning manufacturing into a
+        confirmation step rather than a correction phase.
       </p>
     </section>
 
-    <!-- Core Capabilities -->
+
+    <!-- WHAT WE CONTROL -->
     <section class="section">
-      <h2>Core Capabilities</h2>
-
-      <div class="grid grid-3">
-        <Card>
-          <h3>Structural Engineering</h3>
-          <p>
-            Custom dieline development optimized for protection, assembly
-            efficiency, and material cost control.
-          </p>
-        </Card>
-
-        <Card>
-          <h3>Template Standardization</h3>
-          <p>
-            Refining or rebuilding designer templates to meet professional
-            production standards.
-          </p>
-        </Card>
-
-        <Card>
-          <h3>Compliance Integration</h3>
-          <p>
-            Structural and layout planning aligned with regulatory requirements
-            in North America and Europe.
-          </p>
-        </Card>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section class="section">
-      <h2>Development Workflow</h2>
+      <h2>What We Control During Development</h2>
 
       <div class="grid grid-2">
         <Card>
-          <h3>01 - Product Assessment</h3>
+          <h3>Structural Feasibility</h3>
           <p>
-            Analyze dimensions, weight, barrier needs, shipping conditions, and
-            retail environment.
+            Dieline accuracy, material compatibility,
+            barrier selection, and sealing integrity
+            aligned with product sensitivity and filling method.
           </p>
         </Card>
 
         <Card>
-          <h3>02 - Structural Proposal</h3>
+          <h3>Artwork & Template Accuracy</h3>
           <p>
-            Deliver production-ready dieline with assembly and cost
-            optimization.
+            Controlled production templates that prevent
+            barcode distortion, misalignment,
+            and finishing tolerance errors.
           </p>
         </Card>
 
         <Card>
-          <h3>03 - Designer Collaboration</h3>
+          <h3>Regulatory Review</h3>
           <p>
-            Improve existing templates or provide standardized structural files
-            for artwork layout.
+            Early verification of warning areas,
+            labeling space allocation,
+            and traceability placement.
           </p>
         </Card>
 
         <Card>
-          <h3>04 - Production Validation</h3>
+          <h3>Cost & Scalability Planning</h3>
           <p>
-            Final review for print alignment, finishing, and scalable mass
-            production.
+            Format and material decisions evaluated
+            not only by unit price,
+            but by long-term SKU expansion and logistics efficiency.
           </p>
         </Card>
       </div>
     </section>
 
-    <!-- Differentiation -->
-    <section class="section">
-      <h2>Why This System Matters</h2>
 
-      <p class="content-narrow">
-        Packaging failures often originate from structural oversight,
-        non-standard templates, or late-stage compliance corrections. Our system
-        minimizes rework, shortens development cycles, and ensures predictable
-        production outcomes.
-      </p>
+    <!-- DEVELOPMENT STEPS -->
+    <section class="section">
+      <h2>Our Packaging Development Workflow</h2>
+
+      <div class="workflow-grid">
+        <Card>
+          <span class="workflow-step">01</span>
+          <h3>Technical Intake Review</h3>
+          <p>
+            We assess product weight, sensitivity,
+            distribution channels, and target markets
+            before proposing structure.
+          </p>
+        </Card>
+
+        <Card>
+          <span class="workflow-step">02</span>
+          <h3>Structure & Material Proposal</h3>
+          <p>
+            Recommended format and material stack
+            based on protection requirements,
+            retail format, and cost targets.
+          </p>
+        </Card>
+
+        <Card>
+          <span class="workflow-step">03</span>
+          <h3>Artwork Template Preparation</h3>
+          <p>
+            Production-ready templates prepared
+            to ensure print registration accuracy
+            and finishing consistency.
+          </p>
+        </Card>
+
+        <Card>
+          <span class="workflow-step">04</span>
+          <h3>Pilot Validation Before Scaling</h3>
+          <p>
+            Small-batch verification of seal strength,
+            structural durability, and visual alignment
+            before committing to volume production.
+          </p>
+        </Card>
+      </div>
     </section>
+
+
+    <!-- HOW THIS CONNECTS TO PRODUCTS -->
+    <section class="section">
+      <h2>Applied Across Multiple Packaging Formats</h2>
+
+      <div class="system-links-grid">
+        <a class="system-link-card" href="/products/category/flexible-packaging">
+          <span class="system-link-meta">Primary Packaging</span>
+          <h3>Flexible Packaging</h3>
+          <p>
+            Stand-up pouches, flat bottom pouches,
+            laminated barrier films, and resealable formats.
+          </p>
+        </a>
+
+        <a class="system-link-card" href="/products/category/paper-box">
+          <span class="system-link-meta">Secondary Packaging</span>
+          <h3>Paper Boxes & Cartons</h3>
+          <p>
+            Folding cartons, retail display trays,
+            and structurally reinforced shipping solutions.
+          </p>
+        </a>
+
+        <a class="system-link-card" href="/products/labels-stickers">
+          <span class="system-link-meta">Labeling Components</span>
+          <h3>Labels & Stickers</h3>
+          <p>
+            Coordinated labeling architecture
+            for compliance and brand consistency.
+          </p>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- WHY THIS APPROACH WORKS -->
+    <section class="section">
+      <h2>Why This Development Approach Reduces Risk</h2>
+
+      <div class="content-narrow">
+        <p>
+          Packaging delays are often caused by late-stage
+          artwork corrections, structural miscalculations,
+          or compliance adjustments after tooling begins.
+        </p>
+
+        <p>
+          By verifying structure, templates, and labeling
+          before mass production,
+          we reduce emergency revisions,
+          freight waste, and timeline disruption.
+        </p>
+      </div>
+    </section>
+
 
     <!-- CTA -->
     <section class="section">
       <div class="cta">
-        <h2>Start Your Packaging Development Project</h2>
-        <p>Discuss your product requirements with our engineering team.</p>
-        <a href="/contact" class="btn-primary"> Request Consultation </a>
+        <h2>Start With a Technical Packaging Review</h2>
+        <p>
+          Share your product type, target market,
+          and distribution goals.
+          We will evaluate structural feasibility
+          before production commitment.
+        </p>
+        <a href="/contact" class="btn-primary">
+          Request Technical Review
+        </a>
       </div>
     </section>
+
   </div>
 </BaseLayout>
